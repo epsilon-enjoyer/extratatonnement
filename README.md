@@ -88,7 +88,7 @@ The notebook includes a sequence of experiments comparing tâtonnement and extra
 
 
 
-During these experiments, prices and demands are clipped to avoid extremely large values. Prices are clipped to be between $`[0, `$```PRICE_SCALE```$`]`$, whereas demand of a consumer for any commodity is clipped to be between $`[0, 2 \cdot `$```MAX_SUPPLY```$`]`$. ```PRICE_SCALE``` is a parameter acting as the upper-bound for prices, whereas ```MAX_SUPPLY``` is a parameter that represents the maximum supply of each commodity in the economy.
+During these experiments, prices and demands are clipped to avoid extremely large values. Prices are clipped to be between \[0, ```PRICE_SCALE```\], whereas demand of a consumer for any commodity is clipped to be between \[0, 2 ⋅ ```MAX_SUPPLY```\]. ```PRICE_SCALE``` is a parameter acting as the upper-bound for prices, whereas ```MAX_SUPPLY``` is a parameter that represents the maximum supply of each commodity in the economy.
 
 
 ## Usage
@@ -103,4 +103,5 @@ The cells of the notebook should be run sequentially to ensure all variables are
 
 
 &nbsp;
+
 
