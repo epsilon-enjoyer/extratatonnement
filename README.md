@@ -2,7 +2,7 @@
 
 
 
-This repository contains a Jupyter notebook experimenting with tâtonnement and extratatonnement. Tâtonnement is a price adjustment algorithm suggested by Léon Walras in 1874, known to converge to Walrasian equilibria in economies satisfying the Weak Axiom of Revealed Preferences (WARP). Extratâtonnement is a class of price adjustment algorithms that arise from applying the class of mirror extragradient algorithms to a variational inequality problem corresponding to the Walrasian equilibrium problem under consideration. We show that extratâtonnement overcomes a challenge encountered by the tâtonnement process: convergence to an equilibrium in a pathological economy known as the Scarf economy. On top of this, we show that extratâtonnement efficiently converges to ε-Walrasian equilibria in large Arrow-Debreu exchange economies.
+This repository contains a Jupyter notebook experimenting with tâtonnement and extratatonnement. Tâtonnement is a price adjustment algorithm suggested by Léon Walras in 1874, known to converge to Walrasian equilibria in economies satisfying the Weak Axiom of Revealed Preferences (WARP). Extratâtonnement is a class of price adjustment algorithms that arise from applying the class of mirror extragradient algorithms to variational inequality problems that represent Walrasian equilibrium problems. We show that extratâtonnement overcomes a challenge encountered by the tâtonnement process: convergence to an equilibrium in a pathological economy known as the Scarf economy. On top of this, we show that extratâtonnement efficiently converges to ε-Walrasian equilibria in large Arrow-Debreu exchange economies.
 
 
 
@@ -10,7 +10,7 @@ This repository contains a Jupyter notebook experimenting with tâtonnement and 
 
 
 
-### Arrow-Debreu Exchange Economies
+##### Arrow-Debreu Exchange Economies
 
 
 
@@ -29,7 +29,7 @@ Prices evolve according to (extra)tâtonnement updates which consider the excess
 
 
 
-### Scarf Economy
+##### Scarf Economy
 
 
 
@@ -43,10 +43,6 @@ Prices evolve according to (extra)tâtonnement updates which consider the excess
 
 
 
-### Core Functions
-
-
-
 ##### Demand functions
 
 
@@ -55,10 +51,10 @@ Returns the Marshallian demand of a consumer for each commodity.
 
 
 
-* ```get\_linear\_marshallian\_demand```: Marshallian demand for a consumer with linear utility
-* ```get\_CD\_marshallian\_demand```: Marshallian demand for a consumer with Cobb-Douglas utility
-* ```get\_leontief\_marshallian\_demand```: Marshallian demand for a consumer with Leontief utility
-* ```get\_ces\_marshallian\_demand```: Marshallian demand for a consumer with CES utility
+* ```get_linear_marshallian_demand```: Marshallian demand for a consumer with linear utility
+* ```get_CD_marshallian_demand```: Marshallian demand for a consumer with Cobb-Douglas utility
+* ```get_leontief_marshallian_demand```: Marshallian demand for a consumer with Leontief utility
+* ```get_ces_marshallian_demand```: Marshallian demand for a consumer with CES utility
 
 
 
@@ -75,8 +71,7 @@ Returns the Marshallian demand of a consumer for each commodity.
 
 
 
-* ```init\_experiment```: randomly generates endowments, valuations, CES parameters, and initial prices with normalized aggregate supply (summing up to MAX\_SUPPLY)
-
+* ```init_experiment```: randomly generates endowments (summing up to ```MAX_SUPPLY```), valuations, CES parameters, and initial prices.
 
 
 ##### Experiments
@@ -89,14 +84,11 @@ The notebook includes a sequence of experiments comparing tâtonnement and extra
 
 * Walrasian violation over time
 * Lipschitz coefficients (applicable only to extra-tâtonnement for checking pathwise Bregman continuity)
-* (Optional) History of prices and excess demand of each commodity
+* (Optional) Prices and excess demand of all commodities at each time step
 
 
 
-During these experiments, prices and demands are clipped to avoid extremely large values. Prices are clipped to be between ```\[0, PRICE\_SCALE]```, whereas demand of a consumer for any commodity is clipped to be between ```\[0, 2 \* MAX\_SUPPLY]```. ```PRICE\_SCALE``` is a parameter acting as the upper-bound for prices, whereas ```MAX\_SUPPLY``` is a parameter that represents the maximum supply of each commodity in the economy.
-
-
-
+During these experiments, prices and demands are clipped to avoid extremely large values. Prices are clipped to be between $`[0, `$```PRICE_SCALE```$`]`$, whereas demand of a consumer for any commodity is clipped to be between $`[0, 2 \cdot `$```MAX_SUPPLY```$`]`$. ```PRICE_SCALE``` is a parameter acting as the upper-bound for prices, whereas ```MAX_SUPPLY``` is a parameter that represents the maximum supply of each commodity in the economy.
 
 
 ## Usage
@@ -104,7 +96,6 @@ During these experiments, prices and demands are clipped to avoid extremely larg
 
 
 The cells of the notebook should be run sequentially to ensure all variables are initialized correctly. The values of experiment variables (number of goods, number of iterations, step size, etc.)  can be changed to observe the convergence of tâtonnement and extratâtonnement in these new scenarios.
-
 
 
 
